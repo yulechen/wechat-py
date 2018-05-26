@@ -1,0 +1,11 @@
+47.97.4.128:53598 - - [26/May/2018 14:12:44] "HTTP/1.1 GET /" - 404 Not Found
+47.97.4.128:53600 - - [26/May/2018 14:12:53] "HTTP/1.1 GET /" - 404 Not Found
+pplication.py", line 313, in run
+    return wsgi.runwsgi(self.wsgifunc(*middleware))
+  File "/Library/Python/2.7/site-packages/web/wsgi.py", line 59, in runwsgi
+    return httpserver.runsimple(func, server_addr)
+  File "/Library/Python/2.7/site-packages/web/httpserver.py", line 157, in runsimple
+    server.start()
+  File "/Library/Python/2.7/site-packages/web/wsgiserver/__init__.py", line 1753, in start
+    raise socket.error(msg)
+socket.error: No socket could be created
