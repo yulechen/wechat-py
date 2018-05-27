@@ -15,9 +15,9 @@ def async(f):
 def doMsgAync(msg):
     url = ""#baiduvoice.text2audio(msg)
     #vioceplayer.play(url)
-    if 'music' in msg  or  '歌' in msg :
+    if 'music' in msg  or  '歌' in msg or '音乐' in msg:
        url= db.getRecommendedforyou()
-    elif msg == "kill":
+    elif msg == "kill" or msg == "关闭":
        vioceplayer.stopAll()
     else:
       url = baiduvoice.text2audio(msg)
