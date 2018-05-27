@@ -5,8 +5,7 @@ import hashlib
 import web
 import reply
 import receive
-import baiduvoice
-
+import dispatcher
 
 class Handle(object):
     def GET(self):
@@ -40,7 +39,8 @@ class Handle(object):
             print "Handle Post webdata is ", webData  # 后台打日志
             recMsg = receive.parse_xml(webData)
             if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
-                baiduvoice.voice_text(recMsg.Content)
+                print"收到的消息"+recMsg.Content
+                dispatcher.doMsgAync(recMsg.Content)
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 content = "test"
